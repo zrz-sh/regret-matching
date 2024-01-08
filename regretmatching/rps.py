@@ -28,8 +28,8 @@ class RPSPlayer(RegretMatchingDecisionMaker):
         return expert[0]
 
     def move(self):
-        # return self.decision()
-        return self.avg_decision()
+        # return self.decision() # regret matching strategy (theoretically reach Nash Equilibrium)
+        return self.avg_decision() # average strategy (empirically faster convergence)
 
     def learn_from(self, opponent_move):
         reward_vector = RPS_REWARD_VECTORS[opponent_move]
