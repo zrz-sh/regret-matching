@@ -28,7 +28,7 @@ class RegretMatchingDecisionMaker:
     def update_rule(self, rewards_vector):
         self.expected_reward += np.dot(self.p, rewards_vector)
         self.experts_rewards += rewards_vector
-        self.regrets = self.experts_rewards - self.expected_reward
+        self.regrets = self.experts_rewards - self.expected_reward # accumulated regret
         self._update_p()
 
     def _update_p(self):
